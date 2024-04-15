@@ -1,0 +1,38 @@
+# School.yml
+  ---
+School
+- name : GSSS
+principal: Someone
+Students:
+- roll_no. : 18
+Name: Aman_Singh
+marks: 89
+
+  #school.xml
+  <?xml version="1.0" encoding="UTF-8">
+<School name="GSSS" principal="Someone">
+ <Students>
+    <Student>
+        <roll_no.>18</roll_no.>
+        <Name>"Aman_Singh"</Name>
+        <marks>89</marks>
+    </Student>
+ </Students>
+</School>
+
+  # School.json
+  {
+    "School": [
+        {
+        "name": "GSSS",
+        "principal": "Someone",
+        "Students": [
+            {
+                "roll_no.":18,
+                "Name": "Aman_Singh",
+                "marks": 89
+            }
+        ]
+         }
+    ]
+}
