@@ -1,0 +1,171 @@
+"mango" : "I am a king of all fruits"
+1: "this is Aman's roll number" 
+--- #Seprator
+#lists
+- apple
+- mango
+- banana 
+- Mango
+--- #Seprator
+cities:
+ - new delhi
+ - Gurugram
+ - Gujrat
+ - Mumbai
+ --- #Seprator
+ cities : [new delhi, Mumbai]
+--- #Seprator
+{mango: "yellow fruit", age: 56}
+ ... #End
+
+ 
+ # DATATYPES
+ #String Variables
+myself: Aman Singh
+fruit: "mango"
+job: 'swe'
+
+bio: 
+Hey my name is Aman Singh.
+i am a very nice dude.
+# write a single line into multiple line
+message: >
+this will
+all
+be
+in one single line.
+
+#same as
+message: !!str this will all be in one single line.
+
+number: 5432
+marks: 96.99
+booleanValue: !!bool No # n, N, false, False, FALSE
+# same for true --> yes, y, Y
+
+# speecify the type
+zero: !!int 0
+positiveNum: !!int 45
+negativeNum: !!int -45
+binaryNum: !!int 0b11001
+octalNum: !!int 06574
+hexa: !!int 0x45
+commaValue: !!int +540_000 #540,000
+exponential numbers: 5.0345E45
+
+
+#floating point numbers
+marks: !!float 59.98
+infinite: !!float .inf
+not a num: .nan 
+
+# null
+surname: !!null Null # or null NULL ~
+~: this is a null key
+
+#dates and times
+date: !!timestamp 2024-03-15
+india time: 2024-03-15T12:15:54.23 +5:30
+no time zone: 2024-03-15T12:15:54.23
+
+# advance datatypes
+student: !!seq
+- marks
+- name 
+- roll_no
+
+# like this also
+cities: [new delhi, mumbai]
+
+# some of the keys of seq will be empty
+# sparse seq
+sparse seq:
+ - hey
+ - how
+ -
+ - Null
+ - sup
+
+ # nested sequences
+ -
+ - mango
+ - apple
+ - banana
+ -
+ - marks
+ - roll num
+ - date
+
+ # key: value pairs are called maps
+ !!map
+
+ #nested mappings: map within an map
+ name: Aman Singh
+ role: { age: 18 ,job: student}
+
+#pairs: keys may have duplicate values
+# !!pairs
+
+pair example: !!pairs [job: student, job: cadet]
+# this will be an array of hashtables
+
+# !!set will allow you to have unique values
+names: !!set
+? Aman 
+? Apoorv
+? Sahil
+? Manu
+
+#dicitionary !!omap
+People: !!omap
+- Aman:
+name: Aman Singh
+age: 18
+height: 165
+-Apoorv
+name: Apoorv OP
+age: 21
+height: 178
+-Sahil 
+name: Sahil Singh
+age: 19
+height: 164
+-Manu 
+name: Manu Sharma
+age: 19
+height: 165
+
+# reusing some properties using anchors
+#anchors --> what do you want to copy and where do you want to copy
+linkings: &likes #anchors tag
+fav fruit: mango
+dislikes: palm
+
+person1:
+name: Aman Singh
+<<: *likes
+
+person2:
+name: aprrov OP
+<<: *likes
+dislikes: berries
+
+# this will look like
+person2:
+name: aprrov OP
+fav fruit: mango
+dislikes: berries
+
+person3:
+name: Sahil Singh
+fav fruit: Water-Melon
+dislikes: banana
+
+person4:
+name: Manu sharma
+fav fruit: Grapes
+dislikes: Orange
+
+
+
+
